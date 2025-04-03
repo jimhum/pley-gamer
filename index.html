@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Gamer - Subir y Descargar Juegos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1>Play Gamer</h1>
+        <ul>
+            <li><a href="#">Cerrar Sesión</a></li>
+            <li><a href="#">Billetera</a></li>
+            <li><a href="#">Ganancias App</a></li>
+            <li><a href="#">Mis Juegos</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar juegos..." onkeyup="searchGames()">
+        <button class="upload-btn" onclick="openUploadModal()">Subir Nuevo Juego</button>
+    </div>
+
+    <div class="categories">
+        <button class="category active">Todos</button>
+        <button class="category">Aventura</button>
+        <button class="category">Carreras</button>
+        <button class="category">Puzzle</button>
+        <button class="category">Disparos</button>
+        <button class="category">Simulador</button>
+    </div>
+
+    <div id="game-list" class="game-list"></div>
+
+    <button class="download-app">Descargar App Play Gamer</button>
+
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Subir un Nuevo Juego</h2>
+            <input type="text" id="gameTitle" placeholder="Título del juego" required>
+            <textarea id="gameDescription" placeholder="Descripción" required></textarea>
+            <input type="file" id="gameFile" accept=".apk,.exe" required>
+            <button onclick="uploadGame()">Subir Juego</button>
+            <button onclick="closeUploadModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
